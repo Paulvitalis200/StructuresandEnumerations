@@ -14,14 +14,14 @@ Movie getMovie() {
     return {"Terminator", 1984};
 }
 
-void showMovie(Movie& movie) {
-    cout << movie.title;
+void showMovie(const Movie* movie) {
+    cout << movie->title;
 }
 
 int main() {
 
     auto movie = getMovie();
-    showMovie(movie);
+    showMovie(&movie);
 
     return 0;
 }
