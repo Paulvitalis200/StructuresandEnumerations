@@ -32,6 +32,8 @@ int main() {
     Movie movie2 = {"Terminator", 1984};
     cout << movie1.releaseYear << endl;
 
+    if (movie1 == movie2)
+        cout << "Equal" << endl;
     cout << movie1; // Will give the Title since we returned the movie.title to the output stream
     return 0;
 }
