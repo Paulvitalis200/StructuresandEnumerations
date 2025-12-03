@@ -3,21 +3,19 @@
 using namespace  std;
 
 
-enum Action {
+enum class Action {
     List = 1,
     Add,
     Update
 };
 
-// The compiler will assign the members different numbers i.e
-// List will be 0, Add will be 1, Update will be 2
+enum class Operation {
+    List = 1,
+    Add,
+    Update
+};
 
-// We can also make them explicitly e.g
-// enum Action {
-//     List = 1,
-//     Add = 2,
-//     Update = 3
-// };
+// Always use stronger type enums to prevent name collisions
 
 int main() {
 
@@ -30,7 +28,9 @@ int main() {
     int input;
     cin >> input;
 
-    if (input == Action::List) {
+    // We have to explicitly cast it to an integer when using strongly typed enums
+    // otherwise we'll get an error
+    if (input == static_cast<int>(Action::List)) {
         cout << "List invoices";
     }
     return 0;
