@@ -12,6 +12,8 @@ int main() {
 
     Movie movie = {"Terminator", 1984};
 
+    auto [title, releaseYear, isPopular] {movie};
+
     cout << movie.releaseYear;
     return 0;
 }
