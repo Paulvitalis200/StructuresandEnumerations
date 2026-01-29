@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -8,12 +9,24 @@ struct Movie {
     bool isPopular; // No need to initialize booleans because they are set to false by default
 };
 
+struct Person {
+    string name;
+    int age = 0;
+    double weight = 0;
+};
+
 int main() {
 
-    Movie movie = {"Terminator", 1984};
+    vector<Movie> movies;
+    // Movie movie {"Terminator", 1984};
+    movies.push_back({"Terminator", 1984});
+    movies.push_back({"Terminator 2", 1995});
 
-    auto [title, releaseYear, isPopular] {movie};
+    // cout << movies[0].title << endl;
 
-    cout << movie.releaseYear;
+    for (const auto& movie: movies)
+        cout << movie.title << endl;
+
+
     return 0;
 }
